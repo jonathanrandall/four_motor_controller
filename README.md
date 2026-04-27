@@ -7,9 +7,14 @@ The design files are for KiCad 10.0.
 ## Repository Contents
 
 ```
-hardware/         # KiCad schematic, PCB layout, and project files
-  symbols/        # Custom KiCad symbol and footprint for VNH7040AYTR
-outputs/          # BOM (JLCPCB format), Gerbers (zip), PINMAP, and PCB PDF
+hardware/                   # KiCad schematic, PCB layout, and project files
+  symbols/                  # Custom KiCad symbol and footprint for VNH7040AYTR
+outputs/                    # BOM (JLCPCB format), Gerbers (zip), PINMAP, and PCB PDF
+firmware/esp32_bridge/      # PlatformIO firmware project (Arduino framework, C++17)
+  src/                      # main.cpp, Motor, PIDController, QuadratureEncoder,
+                            #   RobotController, Mcp23017Bus, WebDashboard, PanTiltController
+  include/                  # Header files
+  platformio.ini            # Build configuration
 ```
 
 ## Important Notes
@@ -18,9 +23,28 @@ outputs/          # BOM (JLCPCB format), Gerbers (zip), PINMAP, and PCB PDF
 
 **The custom VNH7040AYTR symbol/footprint** (`hardware/symbols/`) must be added to your KiCad library if opening the project on a new machine.
 
+**The firmware has not been validated on hardware.** It compiles and is provided as a starting point.
+
+**WiFi credentials are not included.** Before building the firmware, set your SSID and password in `firmware/esp32_bridge/src/main.cpp`.
+
+## Building the Firmware
+
+Requires [PlatformIO](https://platformio.org/). All commands run from `firmware/esp32_bridge/`.
+
+```bash
+# Build
+pio run
+
+# Flash (USB-C, use BOOT mode if required)
+pio run --target upload
+
+# Monitor serial output (115200 baud)
+pio device monitor
+```
+
 ## Contributing
 
-This is primarily a personal project and is not actively maintained as a collaborative effort. You are welcome to fork it and adapt it for your own use. Pull requests with meaningful fixes or improvements may be considered, but there is no guarantee of review or merging.
+Contributions are welcome. If you have your own motor controller design or variant you would like to share, please add it in its own directory rather than modifying the existing files. Pull requests with bug fixes or improvements to the existing design are welcome.
 
 ## Disclaimer
 
