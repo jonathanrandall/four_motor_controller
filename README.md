@@ -9,7 +9,7 @@ The design files are for KiCad 10.0.
 ```
 hardware/                   # KiCad schematic, PCB layout, and project files
   symbols/                  # Custom KiCad symbol and footprint for VNH7040AYTR
-outputs/                    # BOM (JLCPCB format), Gerbers (zip), PINMAP, and PCB PDF
+docs_and_outputs/           # BOM (JLCPCB format), Gerbers (zip), PINMAP, and datasheets
 firmware/esp32_bridge/      # PlatformIO firmware project (Arduino framework, C++17)
   src/                      # main.cpp, Motor, PIDController, QuadratureEncoder,
                             #   RobotController, Mcp23017Bus, WebDashboard, PanTiltController
@@ -19,7 +19,7 @@ firmware/esp32_bridge/      # PlatformIO firmware project (Arduino framework, C+
 
 ## Important Notes
 
-**The BOM and PINMAP in `outputs/` may be out of date.** Always cross-reference against the schematic and PCB files before ordering parts or assembling hardware.
+**The BOM and PINMAP in `docs_and_outputs/` may be out of date.** Always cross-reference against the schematic and PCB files before ordering parts or assembling hardware.
 
 **The custom VNH7040AYTR symbol/footprint** (`hardware/symbols/`) must be added to your KiCad library if opening the project on a new machine.
 
