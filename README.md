@@ -1,6 +1,8 @@
 # four_motor_controller
 
-A 4-layer 120×80mm PCB motor controller for robotics applications. Drives 4 DC motors with encoder feedback using an ESP32-S3 microcontroller, 4× VNH7040AYTR high-current motor drivers (~12A per channel), and an MCP23017 I2C GPIO expander for direction control.
+A 4-layer PCB motor controller for robotics applications. Drives 4 DC motors with encoder feedback using an ESP32-S3 microcontroller, 
+
+* 4× VNH7040AYTR high-current motor drivers, and an MCP23017 I2C GPIO expander for direction control.
 
 The design files are for KiCad 10.0.
 
