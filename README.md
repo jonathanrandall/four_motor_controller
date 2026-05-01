@@ -4,6 +4,8 @@ A 4-layer 120×80mm PCB motor controller for robotics applications. Drives 4 DC 
 
 The design files are for KiCad 10.0.
 
+The ROS2 control code used in the video is at https://github.com/jonathanrandall/new_pcb_robot
+
 ## Repository Contents
 
 ```
