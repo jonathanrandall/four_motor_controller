@@ -611,7 +611,7 @@ void WebDashboard::setupRoutes() {
         if (!g_auxPinHigh) {
             g_auxPinHigh = true;
             digitalWrite(AUX_PIN, HIGH);
-            TimerHandle_t t = xTimerCreate("auxOff", pdMS_TO_TICKS(2000), pdFALSE, nullptr,
+            TimerHandle_t t = xTimerCreate("auxOff", pdMS_TO_TICKS(600), pdFALSE, nullptr,
                 [](TimerHandle_t xTimer) {
                     digitalWrite(AUX_PIN, LOW);
                     g_auxPinHigh = false;

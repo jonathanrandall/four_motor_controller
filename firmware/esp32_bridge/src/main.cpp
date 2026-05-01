@@ -11,8 +11,8 @@
 // ============================================================================
 
 // WiFi credentials
-const char* WIFI_SSID = "****";
-const char* WIFI_PASSWORD = "****";
+const char* WIFI_SSID = "WF";
+const char* WIFI_PASSWORD = "";
 
 // mDNS hostname (access via http://robot.local)
 const char* MDNS_HOSTNAME = "robot";
@@ -182,7 +182,7 @@ void processSerialCommand(const String& cmd) {
             if (!g_auxPinHigh) {
                 g_auxPinHigh = true;
                 digitalWrite(PIN_AUX_OUT, HIGH);
-                TimerHandle_t t = xTimerCreate("auxOff", pdMS_TO_TICKS(2000), pdFALSE, nullptr,
+                TimerHandle_t t = xTimerCreate("auxOff", pdMS_TO_TICKS(600), pdFALSE, nullptr,
                     [](TimerHandle_t xTimer) {
                         digitalWrite(PIN_AUX_OUT, LOW);
                         g_auxPinHigh = false;
