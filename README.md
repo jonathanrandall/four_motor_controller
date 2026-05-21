@@ -1,3 +1,7 @@
+# NOTE
+
+This was originally done in kicad 9.0 and updated to kicad 10.0. Need to check the symbol for the NMOS transistor against the data sheet for the transistor in the bom file
+
 # four_motor_controller
 
 A 4-layer PCB motor controller for robotics applications. Drives 4 DC motors with encoder feedback using an ESP32-S3 microcontroller, 
